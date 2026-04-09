@@ -1,0 +1,18 @@
+# Ignore data and cache
+data/
+logs/
+__pycache__/
+config/__pycache__/
+core/__pycache__/
+skills/__pycache__/
+
+# Ignore browser profiles
+data/browser_*/
+
+# Ignore Python bytecode
+*.pyc
+*.pyo
+
+# Ignore environment
+.env
+venv/
