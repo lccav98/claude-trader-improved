@@ -605,22 +605,14 @@ async def analysis_loop(feed, recovery, adaptive, executor, simulator):
                                 strategy="ApexOIFExecutor"
                             )
                             print(f"  [NT8] OIF order sent: {nt8_result}", flush=True)
+                            print(f"  ✅ ORDEM ENVIADA VIA NT8!", flush=True)
                         except Exception as e:
                             print(f"  [NT8] ATI Error: {e}", flush=True)
                     
-                    # Also try native executor (Tradovate API)
-                    result = await executor.place_bracket_order(
-                        sig["action"], sig["price"], atr_val, sig["score"]
-                    )
-                    if result["success"]:
-                        print(f"  ✅ ORDEM ENVIADA COM SUCESSO!", flush=True)
-                    else:
-                        # If native failed but NT8 sent, still success
-                        if nt8_result:
-                            print(f"  ✅ ORDEM ENVIADA VIA NT8 ATI!", flush=True)
-                        else:
-                            print(f"  ❌ FALHA: {result.get('reason', 'desconhecido')}", flush=True)
-                            logger.warning(f"Order failed: {result}")
+                    # Native executor DESABILITADO - API Tradovate retorna 404
+                    # result = await executor.place_bracket_order(
+                    #     sig["action"], sig["price"], atr_val, sig["score"]
+                    # )
                 else:
                     print(f"  Operar manualmente em trader.tradovate.com", flush=True)
                 print(f"{'='*60}", flush=True)

@@ -11,8 +11,9 @@ Config: AUTO_EXECUTE_TRADES = True em config/settings.py
 - Ordens vao para: demo.tradovateapi.com/v1/order/placeOSO
 - бракет: Stop + Limit automaticos
 
-## CREDENCIAIS (NUNCA EXPOR)
+## CONTA TRADOVATE
 - Usuario: APEX_549417 | Conta demo: APEX5494170000001 (ID: 45402487)
+- Renovação saldo mesa proprietária: 01/05/2026
 - Base DEMO: https://demo.tradovateapi.com/v1
 - Base LIVE: https://live.tradovateapi.com/v1
 - Config: `config/settings.py`
